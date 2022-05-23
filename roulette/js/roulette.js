@@ -13,6 +13,10 @@
 let ws = null;
 
 $(document).ready(() => {
+  setupWebsocket();
+});
+
+function setupWebsocket() {
   ws = new WebSocket("ws://localhost:20115");
 
   ws.onopen = e => {
@@ -21,13 +25,15 @@ $(document).ready(() => {
 
   ws.onclose = e => {
     console.log('close', e);
+
+    setTimeout(setupWebsocket, 10000);
   }
 
   ws.onmessage = e => {
     const data = JSON.parse(e.data);
     insertTask(data);
   }
-});
+}
 
 
 const queue = [];
