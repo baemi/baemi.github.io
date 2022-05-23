@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'CookieRun';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/CookieRunFont_TTF/CookieRunRegular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CookieRun';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../fonts/CookieRunFont_TTF/CookieRunBold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CookieRun';
+  font-weight: 900;
+  font-style: normal;
+  src: url('../fonts/CookieRunFont_TTF/CookieRunBlack.ttf') format('truetype');
+  font-display: swap;
+}
+
+#rouletteContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgb(0, 255, 0);
+  background-color: transparent;
+}
+
+#roulette {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.roulette-box {
+  position: relative;
+
+  background-color: rgba(255, 0, 0, 0.3);
+  background-color: #262626;
+  color: white;
+
+  width: 200px;
+  height: 66px;
+
+  overflow: hidden;
+}
+
+#roulette .roulette-box ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  width: 206px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#roulette .roulette-box ul li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+
+  width: 180px;
+  height: 66px;
+
+  font-family: 'CookieRun';
+  font-weight: 400;
+
+  user-select: none;
+}
+
+.roulette-ani-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 4px), calc(-50% + 9px));
+}
+
+.roulette-viewer-info {
+  position: absolute;
+  top: calc(50% + 110px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 200px;
+  text-align: center;
+  font-family: 'CookieRun';
+  font-weight: 700;
+
+  color: #eee;
+
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+
+.test-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
